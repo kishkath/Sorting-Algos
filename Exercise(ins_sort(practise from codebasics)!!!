@@ -1,0 +1,63 @@
+# Sorting-Algos
+
+
+'''''''''''''''''''''''''''''
+
+def insertion(arr):
+    for i in range(1,len(arr)):
+        
+        key=arr[i]
+        j=i 
+        
+        while j>0 and arr[j-1]>arr[j]:
+            
+            arr[j],arr[j-1]=arr[j-1],arr[j]
+            
+            j-=1 
+        
+def median(res):
+    
+    #IF it's length is odd, then median is mid value 
+    
+    if len(res)%2!=0:
+        mid=len(res)//2 
+        return res[mid]
+      
+    #If it's length is even, median is (mid value+ midvalue-1) indices by 2 
+    
+    else:
+        mid=len(res)//2 
+        i,j=mid-1,mid
+        #return mid,i,j 
+        
+        ans=(res[i]+res[j])/2 
+        return ans 
+        
+'''
+#arr=[0,1,2,2,5,5]
+#print(median(arr))
+'''
+
+arr=[2, 1, 5, 7, 2, 0, 5]
+        
+new=[]
+i=0
+
+#Appending element by element and sorting them with insertion sort 
+#and finding median at every append stage of element!!!
+
+while i!=len(arr):
+    new.append(arr[i])
+    insertion(new)
+    ress=median(new)
+
+    print(new,ress)
+    i+=1 
+    
+''''''''''''''''''''''''''''''''
+
+
+
+
+
+
