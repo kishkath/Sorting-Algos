@@ -1,0 +1,33 @@
+'''
+Bubble Sort can be implemented as comparing first two terms and picking highest term, afterwards going for next two and comparing them.
+
+##Implementation##
+
+
+
+ 
+def bubble(value):
+    for k in range(len(value)):
+        for i in range(len(value)-1):
+            if value[i]>value[i+1]:
+                value[i],value[i+1]=value[i+1],value[i]
+        
+
+value=[212,2,343,21,98,121,22,1]
+print(bubble(value))
+print(value)
+
+##################################
+Adv:
+ Little Memory 
+ 
+Disadv:
+ Takes time to sort.
+ 
+Worst and Average Case Time Complexity: O(n*n). Worst case occurs when array is reverse sorted.
+
+Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
+
+Auxiliary Space: O(1)
+
+Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
