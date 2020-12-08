@@ -1,0 +1,86 @@
+# Sorting-Algos
+
+Shell sort is an extened or modified version of insertion sort which would take more comparions and swaps by checking every comparisons. 
+But , by shell sort a sub array of lists will be sorted as per order.
+
+
+#######
+1)Start with gap=n/2 and sort sub arrays!
+2)keep reducing gaps by n/2 and keep on sorting sub arrays!
+3)Last iteration should have gap=1, at this point it is same as insertion sort!
+
+#######
+
+Worst case :
+
+   O(n^2) & O(n log^2n)
+   
+Best case:
+
+  O(logn) and O(n log^2n)
+  
+  
+  
+  
+##################Implementation#############
+
+def shell_sort(arr):
+    n=len(arr)
+    gap=n//2 
+    
+    while gap>0:
+        
+        for i in range(gap,n):
+            key=arr[i]
+            
+            j=i 
+            
+            while j>=gap and arr[j-gap]>key:
+                
+                arr[j]=arr[j-gap]
+                
+                j-=gap 
+                
+            arr[j]=key 
+                
+        gap//=2
+    
+arr=[1,23,2,45,3,0,-1]
+#print(len(arr))
+shell_sort(arr)
+print(arr)
+
+##################################################
+
+
+#############EXERCISE (CODE_BASICS) ######################################
+
+
+def dup(element):
+    s=list(set(element))
+    return s 
+
+def shell_sort(arr):
+    
+    n=len(arr)
+    gap=n//2 
+    
+    while gap>0:
+        
+        for i in range(gap,n):
+            key=arr[i]
+            j=i 
+            
+            while j>=gap and arr[j-gap]>=key:
+                arr[j]=arr[j-gap]
+                j-=gap 
+                
+            arr[j]=key 
+            
+        gap=gap//2 
+        
+arr=[2, 1, 5, 7, 2, 0, 5, 1, 2, 9, 5, 8, 3]
+shell_sort(arr)
+print(dup(arr))
+                
+#############################################################################
